@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "lightgrey",
     marginBottom: 10,
+    paddingBottom: 3,
   },
   name: {
     fontSize: 16,
     fontWeight: "bold",
     width: 200,
-    marginBottom: 2,
   },
   rating: {
     fontSize: 15,

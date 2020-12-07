@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, FlatList, Text, Image } from "react-native";
+import {
+  StyleSheet,
+  ScrollView,
+  View,
+  FlatList,
+  Text,
+  Image,
+} from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import yelp from "../api/yelp";
 
@@ -19,7 +26,7 @@ const ViewEateryScreen = ({ navigation }) => {
     return null;
   }
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.heading}>{eatery.name}</Text>
       <FlatList
         data={eatery.photos}
@@ -30,14 +37,14 @@ const ViewEateryScreen = ({ navigation }) => {
       />
 
       <View style={styles.stats}>
-        <Text style={styles.statsText}>Price Point: {eatery.price}</Text>
-        <Text style={styles.statsText}>
+        <Text>Price Point: {eatery.price}</Text>
+        <Text>
           {eatery.rating} Stars ({eatery.review_count} Reviews)
         </Text>
       </View>
 
       <Text style={styles.address}>
-        <Entypo name="location-pin" style={styles.icon} /> Location:{" "}
+        <Entypo name="location-pin" style={styles.icon} />{" "}
         {eatery.location.address1}, {eatery.location.city},{" "}
         {eatery.location.zip_code}
       </Text>
@@ -47,7 +54,7 @@ const ViewEateryScreen = ({ navigation }) => {
           {eatery.phone}
         </Text>
       ) : null}
-    </View>
+    </ScrollView>
   );
 };
 
@@ -71,10 +78,10 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 30,
-  },
-  statsText: {
-    height: 90,
+    borderBottomColor: "lightgrey",
+    borderBottomWidth: 1,
+    paddingBottom: 3,
+    marginBottom: 10,
   },
   icon: {
     fontSize: 16,
