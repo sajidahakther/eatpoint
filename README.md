@@ -1,23 +1,20 @@
-# Eat Point
+# FoodCourt
 
-Can’t decide on where to eat? Discover restaurants and cafes in London that meet your price point. Search anything from vegan, halal to pizza.
-
-This application was built using React Native.
-
+A mobile application built using React Native to discover restaurants, cafes, and beverage concessions in London, categorised by price. Search anything from "halal", "sushi", to "chai tea". A mobile application built using React Native.
 ## Instructions
 
 ``` bash
 # Download zip or clone repo
-gh repo clone sajidahakther/eatpoint
+git clone https://github.com/sajidahakther/foodcourt.git
 
 # Install dependencies
-npm install
+yarn
 
 # Install the expo client
-npm install --global expo-cli
+yarn global add expo-cli
 
 # Start the app
-npm start
+yarn start
 ```
 
 ### To view the app, choose one of the following:

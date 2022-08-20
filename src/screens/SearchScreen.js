@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { ScrollView, Text } from "react-native";
-import SearchBox from "../components/SearchBox";
-import useEateryData from "../hooks/useEateryData";
-import EateryList from "../components/EateryList";
+import SearchBar from "../components/SearchBar";
+import useRestaurantData from "../hooks/useRestaurantData";
+import RestaurantList from "../components/RestaurantList";
 
 const SearchScreen = () => {
   const [text, setText] = useState("");
-  const [searchApi, eateries, errorMessage] = useEateryData();
+  const [searchApi, restaurants, errorMessage] = useRestaurantData();
 
-  const filterEateryByPrice = (price) => {
-    return eateries.filter((eatery) => {
-      return eatery.price === price;
+  const filterRestaurantByPrice = (price) => {
+    return restaurants.filter((restaurant) => {
+      return restaurant.price === price;
     });
   };
   return (
     <>
-      <SearchBox
+      <SearchBar
         term={text}
         onTextChanged={setText}
         onTextSubmitted={() => searchApi(text)}
@@ -23,17 +23,20 @@ const SearchScreen = () => {
       <ScrollView>
         {errorMessage ? <Text>{errorMessage}</Text> : null}
 
-        <EateryList
-          eateries={filterEateryByPrice("£")}
-          heading="Cheap and Cheerful"
+        <RestaurantList
+          restaurants={filterRestaurantByPrice("£")}
+          heading="£"
+          width={40}
         />
-        <EateryList
-          eateries={filterEateryByPrice("££")}
-          heading="Slightly Pricey"
+        <RestaurantList
+          restaurants={filterRestaurantByPrice("££")}
+          heading="££"
+          width={52}
         />
-        <EateryList
-          eateries={filterEateryByPrice("£££")}
-          heading="Expensive Eats"
+        <RestaurantList
+          restaurants={filterRestaurantByPrice("£££")}
+          heading="£££"
+          width={65}
         />
       </ScrollView>
     </>
