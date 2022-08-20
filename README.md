@@ -1,6 +1,8 @@
-# FoodCourt
+<img src="https://i.postimg.cc/9z5vyQ7t/Screenshot-2022-08-20-at-08-42-23.png" width="100%">
 
-A mobile application built using React Native to discover restaurants, cafes, and beverage concessions in London, categorised by price. Search anything from "halal", "sushi", to "chai tea". A mobile application built using React Native.
+## About FoodCourt
+A mobile application built with React Native to discover restaurants, cafes, and beverage concessions in London, categorised by price. Search anything from "halal", "sushi", to "chai tea".
+
 ## Instructions
 
 ``` bash
